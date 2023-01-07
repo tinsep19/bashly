@@ -11,7 +11,10 @@
 = render :initialize
 = render :run
 
+> function is_source() {
+>   [[ "${FUNCNAME[1]}" == "source" ]] && return 0 || return 1
+> } 
 > 
 > initialize
-> run "$@"
+> is_source || run "$@"
 > 
